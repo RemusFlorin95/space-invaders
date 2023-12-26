@@ -1,1 +1,22 @@
-1
+Followed a tutorial for this project.
+1. Images I found were way bigger than the ones downloaded in the tutorial, I found "pygame.transform.scale()" and used it to resize all images
+2. Had to iterate trough a range of enemies to render them on screen, I couldn't so I found a fix
+  
+Before: 
+  for i in range(num_of_enemies):
+    enemyImg.append (pygame.image.load("alien.png")) 
+    enemyImg=pygame.transform.scale(enemyImg,(64,64)) 
+    enemyX.append(random.randint(0,735))
+    enemyY.append(random.randint(50,150))
+    enemyX_change.append(4) 
+    enemyY_change.append(40)
+ After:
+ for i in range(num_of_enemies):
+    enemy_img = pygame.image.load("alien.png") 
+    enemy_img = pygame.transform.scale(enemy_img, (64, 64))
+    enemyImg.append(enemy_img)
+    
+    enemyX.append(random.randint(0, 735))
+    enemyY.append(random.randint(50, 150))
+    enemyX_change.append(4) 
+    enemyY_change.append(40)
